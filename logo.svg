@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="100%" height="100%">
+    <defs>
+        <!-- Gradients -->
+        <radialGradient id="orangeDotGrad" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#ffa200" />
+            <stop offset="60%" stop-color="#ff5b00" />
+            <stop offset="100%" stop-color="#c40000" />
+        </radialGradient>
+        
+        <linearGradient id="greenSwooshGrad" x1="0%" y1="90%" x2="100%" y2="10%">
+            <stop offset="0%" stop-color="#023b1c" />
+            <stop offset="25%" stop-color="#057036" />
+            <stop offset="60%" stop-color="#0bb355" />
+            <stop offset="85%" stop-color="#057036" />
+            <stop offset="100%" stop-color="#012a14" />
+        </linearGradient>
+        
+        <linearGradient id="greenTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0a5e35" />
+            <stop offset="30%" stop-color="#054524" />
+            <stop offset="100%" stop-color="#012310" />
+        </linearGradient>
+
+        <linearGradient id="silverTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#eaeaea" />
+            <stop offset="100%" stop-color="#b5b5b5" />
+        </linearGradient>
+
+        <!-- Glow and Shadow filters for premium 3D look -->
+        <filter id="premiumShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="1.5" dy="2.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.18"/>
+        </filter>
+        
+        <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="1" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+    </defs>
+
+    <!-- 1. SPHERE COMPONENT (left side) -->
+    <!-- We arrange dots that mimic a spherical projection, split by the swoosh area -->
+    <g filter="url(#premiumShadow)" id="sphere-dots">
+        <!-- Top and Left Dots (Hemisphere 1) -->
+        <circle cx="38" cy="24" r="2.2" fill="url(#orangeDotGrad)" />
+        <circle cx="48" cy="21" r="2.8" fill="url(#orangeDotGrad)" />
+        <circle cx="58" cy="22" r="3.2" fill="url(#orangeDotGrad)" />
+        <circle cx="68" cy="26" r="3.0" fill="url(#orangeDotGrad)" />
+        
+        <circle cx="28" cy="32" r="2.5" fill="url(#orangeDotGrad)" />
+        <circle cx="38" cy="31" r="3.8" fill="url(#orangeDotGrad)" />
+        <circle cx="49" cy="30" r="4.2" fill="url(#orangeDotGrad)" />
+        <circle cx="61" cy="32" r="3.6" fill="url(#orangeDotGrad)" />
+        
+        <circle cx="22" cy="42" r="2.2" fill="url(#orangeDotGrad)" />
+        <circle cx="31" cy="42" r="3.5" fill="url(#orangeDotGrad)" />
+        <circle cx="42" cy="41" r="4.5" fill="url(#orangeDotGrad)" />
+        
+        <!-- Bottom and Right Dots (Hemisphere 2, below swoosh line) -->
+        <circle cx="50" cy="53" r="4.2" fill="url(#orangeDotGrad)" />
+        <circle cx="62" cy="50" r="3.8" fill="url(#orangeDotGrad)" />
+        <circle cx="72" cy="48" r="3.0" fill="url(#orangeDotGrad)" />
+        
+        <circle cx="34" cy="57" r="3.2" fill="url(#orangeDotGrad)" />
+        <circle cx="44" cy="62" r="4.0" fill="url(#orangeDotGrad)" />
+        <circle cx="56" cy="61" r="3.5" fill="url(#orangeDotGrad)" />
+        <circle cx="67" cy="58" r="2.8" fill="url(#orangeDotGrad)" />
+        
+        <circle cx="38" cy="69" r="2.5" fill="url(#orangeDotGrad)" />
+        <circle cx="48" cy="71" r="3.0" fill="url(#orangeDotGrad)" />
+        <circle cx="58" cy="69" r="2.5" fill="url(#orangeDotGrad)" />
+        <circle cx="48" cy="79" r="1.8" fill="url(#orangeDotGrad)" />
+    </g>
+
+    <!-- 2. SHINY GREEN SWOOSH -->
+    <!-- Sweeps across the sphere and trails off to the right -->
+    <path d="M 12 49 
+             C 12 25, 30 14, 56 14 
+             C 74 14, 94 20, 122 21 
+             C 165 22, 225 15, 280 5 
+             C 225 16, 160 26, 114 26 
+             C 72 26, 44 32, 30 46 
+             C 21 56, 22 70, 14 70 
+             C 12 70, 12 61, 12 49 Z" 
+          fill="url(#greenSwooshGrad)" 
+          filter="url(#premiumShadow)" />
+
+    <!-- 3. BRAND NAME TYPOGRAPHY -->
+    <!-- PRIME -->
+    <text x="105" y="47" 
+          font-family="'Hanken Grotesk', 'Inter', 'Outfit', sans-serif" 
+          font-weight="900" 
+          font-size="38" 
+          fill="url(#greenTextGrad)" 
+          letter-spacing="1"
+          filter="url(#premiumShadow)">PRIME</text>
+
+    <!-- AIR LAB SOLUTIONS subtitle with orange highlight bars -->
+    <g filter="url(#premiumShadow)">
+        <!-- Left accent bar -->
+        <line x1="105" y1="62" x2="135" y2="62" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" />
+        
+        <!-- Text: AIR LAB SOLUTIONS -->
+        <text x="143" y="66" 
+              font-family="'Inter', 'Hanken Grotesk', sans-serif" 
+              font-weight="700" 
+              font-size="11.5" 
+              fill="#064022" 
+              letter-spacing="2.2">AIR LAB SOLUTIONS</text>
+              
+        <!-- Right accent bar -->
+        <line x1="315" y1="62" x2="345" y2="62" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+</svg>
