@@ -11,6 +11,13 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006a61'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/></svg>">
 </head>
 <body>
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <span class="material-symbols-outlined preloader-icon">precision_manufacturing</span>
+            <span class="preloader-brand">PRIME AIR LAB</span>
+        </div>
+    </div>
 
     <!-- 1. HEADER NAVIGATION (Top Horizontal Menu) -->
     <header id="header">
@@ -114,7 +121,7 @@
         <!-- Company Highlights / Core Statistics Section -->
         <section class="section-padding" style="background-color: var(--color-surface-lowest); border-bottom: 1px solid var(--color-outline-variant);">
             <div class="container">
-                <div style="display: grid; grid-template-columns: 1fr; md-grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;">
+                <div class="grid-md-sidebar" style="gap: 64px;">
                     <div>
                         <span class="text-label-sm" style="color: var(--color-secondary); margin-bottom: 12px; display: inline-block;">engineering credentials</span>
                         <h2 class="text-headline-md" style="margin-bottom: 20px;">Precision Controlled Environments</h2>
@@ -183,17 +190,17 @@
                         </div>
                     </div>
 
-                    <!-- Featured Service 2: Modular OTs -->
+                    <!-- Featured Service 2: Ducted OTs -->
                     <div class="service-card stainless-border">
                         <div class="service-img-wrapper">
-                            <img alt="Modular hospital operating theater panels" class="service-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB3Nxhn9zyytJAHm_0XRy49gefF00_uWCny0noplF4cJ-OEssnp8cbVX0XHTVZAxGQWJUxbwCZlA-poNU428r7WU96wDFmQqKY03lyGItgspp3kr8NOoC2mAmy3l7NQeQVd0vyDcja4_-RO0zvxtKqYnaqTCvOUUSakbmRXNl7ojdDkR9FdoBmmcz7Cil7uoJkDhR-5tedrWDpryHjAzrSxkHc44gNHqU7-6PQ9ExRq9Nx0nk2Ohy-E0Cei0Tm11-gihkwBhdQOYGk">
+                            <img alt="Real hospital ducted modular operating theater panels and ceiling" class="service-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB3Nxhn9zyytJAHm_0XRy49gefF00_uWCny0noplF4cJ-OEssnp8cbVX0XHTVZAxGQWJUxbwCZlA-poNU428r7WU96wDFmQqKY03lyGItgspp3kr8NOoC2mAmy3l7NQeQVd0vyDcja4_-RO0zvxtKqYnaqTCvOUUSakbmRXNl7ojdDkR9FdoBmmcz7Cil7uoJkDhR-5tedrWDpryHjAzrSxkHc44gNHqU7-6PQ9ExRq9Nx0nk2Ohy-E0Cei0Tm11-gihkwBhdQOYGk">
                         </div>
                         <div class="service-body">
-                            <h3 class="text-title-lg">Modular Operation Theatres</h3>
-                            <p class="text-body-sm">Advanced sterile OT solutions designed for hospitals and healthcare institutions.</p>
+                            <h3 class="text-title-lg">Ducted Operation Theatre</h3>
+                            <p class="text-body-sm">Advanced pre-fabricated ducted operating suites designed for seamless hygienic maintenance.</p>
                             <div class="service-actions">
-                                <button class="btn-card-details" onclick="openProductModal('modular-ot')">DETAILS</button>
-                                <button class="btn-card-quote" onclick="requestServiceQuote('modular-ot')">GET QUOTE</button>
+                                <button class="btn-card-details" onclick="openProductModal('ducted-ot')">DETAILS</button>
+                                <button class="btn-card-quote" onclick="requestServiceQuote('ducted-ot')">GET QUOTE</button>
                             </div>
                         </div>
                     </div>
@@ -216,7 +223,7 @@
 
                 <div style="text-align: center;">
                     <a href="services.html" class="btn-primary" style="height: 52px; padding: 0 36px;">
-                        VIEW ALL SOLUTIONS (11 PRODUCTS)
+                        VIEW ALL SOLUTIONS (13 PRODUCTS)
                         <span class="material-symbols-outlined">arrow_forward</span>
                     </a>
                 </div>

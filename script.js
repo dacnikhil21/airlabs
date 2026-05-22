@@ -17,15 +17,26 @@ const PRODUCT_SPECS = {
             ['Panel Thickness', '50mm / 80mm / 100mm double-skin panels']
         ]
     },
-    'modular-ot': {
-        title: 'Integrated Modular Operating Theaters',
-        description: 'Pre-fabricated operating suites designed for seamless hygienic maintenance, customized clinical lighting integration, and premium sterile airflow controls.',
+    'ducted-ot': {
+        title: 'Ducted Operation Theatres',
+        description: 'Advanced pre-fabricated ducted operating suites designed for seamless hygienic maintenance, customized clinical lighting integration, and premium sterile HEPA airflow controls via extensive overhead ducting systems.',
         specs: [
-            ['Ceiling Integration', 'Hermetic Laminar Airflow ceiling grid with HEPA filtration'],
+            ['Ceiling Integration', 'Hermetic Laminar Airflow ceiling grid with HEPA filtration (Ducted)'],
             ['Wall Materials', 'Anti-bacterial SS304 or high-strength clinical glass panels'],
             ['Differential Pressure', 'Positive pressure maintenance (+15 to +20 Pa)'],
             ['Control Panel', 'Digital touch screen displaying temp, RH, gas indicators, & timer'],
             ['Flooring System', 'Conductive or dissipative PVC with seamless coved borders']
+        ]
+    },
+    'ductless-ot': {
+        title: 'Ductless Operation Theatres',
+        description: 'Next-generation ductless modular operating rooms featuring localized air purification, designed for existing structures without extensive ceiling plenums or ductwork infrastructure.',
+        specs: [
+            ['Air Circulation', 'Recirculating standalone HEPA filtration towers'],
+            ['Wall Materials', 'Anti-bacterial SS304 modular partitions'],
+            ['Installation Time', 'Rapid deployment compared to traditional ducted systems'],
+            ['Control Panel', 'Centralized environmental touch interface'],
+            ['Flooring System', 'Seamless, chemical-resistant clinical grade flooring']
         ]
     },
     'scientific-doors': {
@@ -126,6 +137,17 @@ const PRODUCT_SPECS = {
             ['Pre-Filtration', 'Washable synthetic pre-filter capturing particles down to 10μm'],
             ['Digital Interface', 'Microprocessor screen with velocity controller and blower timer']
         ]
+    },
+    'hospital-equipment': {
+        title: 'Hospital Equipment Manufacturing',
+        description: 'Precision-engineered clinical and hospital equipment manufactured using surgical grade SS304/SS316 stainless steel to meet stringent medical safety standards.',
+        specs: [
+            ['Material Construction', 'Surgical grade AISI 304 / 316 Stainless Steel'],
+            ['Manufacturing Standard', 'GMP and FDA compliance verified'],
+            ['Surface Finish', 'Electro-polished, bacteria-resistant smooth finishes'],
+            ['Customization', 'Tailored ergonomic designs for critical care units'],
+            ['Durability', 'Heavy-gauge steel with anti-corrosive chemical resistance']
+        ]
     }
 };
 
@@ -172,6 +194,24 @@ window.requestServiceQuote = (key) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    /* ==========================================================================
+       0. PRELOADER LOGIC
+       ========================================================================== */
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // Lock body scrolling while preloader is active
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            document.body.style.overflow = ''; // Restore scrolling
+            
+            // Remove from DOM after transition
+            setTimeout(() => preloader.remove(), 500);
+        }, 3000); // 3 seconds
+    }
 
     /* ==========================================================================
        1.5. PARSE URL PARAMETERS FOR INQUIRY AUTO-SELECTION (MULTI-PAGE)

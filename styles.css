@@ -61,6 +61,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 html {
     scroll-behavior: smooth;
     background-color: var(--color-bg);
@@ -88,6 +94,50 @@ body {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
+}
+
+/* --- Preloader --- */
+.preloader {
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-surface-lowest);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    animation: pulsePreloader 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.preloader-icon {
+    font-size: 64px;
+    color: var(--color-secondary);
+}
+
+.preloader-brand {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.02em;
+}
+
+@keyframes pulsePreloader {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.95);
+    }
 }
 
 /* --- Selection Color --- */
@@ -251,7 +301,7 @@ header.scrolled {
 
 .brand-text {
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
     font-weight: 800;
     letter-spacing: -0.02em;
 }
@@ -369,7 +419,7 @@ header.scrolled {
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.85rem;
-    padding: 14px 28px;
+    padding: 12px 20px;
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
@@ -396,7 +446,7 @@ header.scrolled {
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.85rem;
-    padding: 14px 28px;
+    padding: 12px 20px;
     border: 2px solid var(--color-primary);
     border-radius: var(--radius-sm);
     cursor: pointer;
@@ -425,7 +475,7 @@ main {
 }
 
 .section-padding {
-    padding: 96px 0;
+    padding: 64px 0;
 }
 
 .section-header {
@@ -441,7 +491,7 @@ main {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 80px 0;
+    padding: 40px 0;
     overflow: hidden;
 }
 
@@ -519,7 +569,7 @@ main {
 
 .about-stat-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 16px;
     margin-top: 32px;
     border-top: 1px solid var(--color-outline-variant);
@@ -1097,6 +1147,22 @@ footer {
     .footer-top {
         grid-template-columns: 1.5fr 1fr 1.2fr 1.2fr;
     }
+
+    .about-stat-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 14px 28px;
+    }
+
+    .section-padding {
+        padding: 96px 0;
+    }
+
+    .hero {
+        padding: 80px 0;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -1110,6 +1176,247 @@ footer {
 
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE UTILITY GRID CLASSES
+   (Replacing invalid inline md-grid-template-columns properties)
+   ========================================================================== */
+
+/* Two-column grid on md+ with sidebar ratio */
+.grid-md-sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+/* Two equal columns on md+ */
+.grid-md-2col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+}
+
+/* 1col -> 2col -> 4col grid */
+.grid-sm2-lg4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 576px) {
+    .grid-sm2-lg4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-md-sidebar {
+        grid-template-columns: 1.2fr 1fr;
+    }
+    .grid-md-2col {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-sm2-lg4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ==========================================================================
+   MOBILE-SPECIFIC RESPONSIVE FIXES (max-width: 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+    /* Hero overlay: cover more on mobile so text is readable */
+    .hero-overlay {
+        background: linear-gradient(180deg, #ffffff 15%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0.7) 100%);
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-trust-row {
+        gap: 12px;
+    }
+
+    .trust-item {
+        flex: 1 1 calc(50% - 12px);
+        min-width: 0;
+    }
+
+    .trust-item .text-label-sm {
+        font-size: 0.65rem;
+    }
+
+    /* Footer stacks to 1 column (already 1fr default), remove invalid span */
+    .footer-column {
+        grid-column: span 1 !important;
+    }
+
+    .footer-top {
+        gap: 32px;
+        padding: 40px 0;
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* Modal fixes for mobile */
+    .modal-card {
+        padding: 24px 16px;
+        max-width: 95vw;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    .modal-title {
+        font-size: 1.1rem;
+        padding-right: 32px;
+    }
+
+    .modal-close-btn {
+        top: 16px;
+        right: 16px;
+    }
+
+    /* Spec items stack vertically on mobile */
+    .spec-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .spec-item span {
+        font-size: 0.8rem;
+    }
+
+    /* Service card image height on mobile */
+    .service-img-wrapper {
+        height: 180px;
+    }
+
+    .service-body {
+        padding: 16px;
+    }
+
+    /* Process step padding */
+    .process-step {
+        padding-left: 52px;
+    }
+
+    /* CTA panel padding on mobile */
+    .cta-panel-inner {
+        padding: 32px 20px !important;
+    }
+
+    /* Section header text alignment */
+    .section-header {
+        margin-bottom: 36px;
+    }
+
+    /* Container padding for mobile */
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Partner avatar scaling */
+    .partner-avatar span {
+        font-size: 40px;
+    }
+
+    /* Buttons - ensure they fit on mobile */
+    .btn-primary, .btn-secondary {
+        font-size: 0.8rem;
+        padding: 10px 16px;
+    }
+
+    /* Page banner mobile */
+    .page-banner {
+        padding: 28px 0;
+    }
+
+    .page-banner-title {
+        font-size: 1.5rem;
+    }
+
+    /* Consultation form mobile */
+    .consultation-info-pane {
+        padding: 24px 16px;
+    }
+
+    .consultation-form-pane {
+        padding: 24px 16px;
+    }
+
+    /* Project card height on mobile */
+    .project-card-wrap {
+        height: 220px;
+    }
+
+    /* WhatsApp widget smaller on mobile */
+    .floating-whatsapp-widget {
+        width: 52px;
+        height: 52px;
+        bottom: 16px;
+        right: 16px;
+    }
+}
+
+/* ==========================================================================
+   EXTRA-SMALL SCREEN FIXES (max-width: 400px)
+   ========================================================================== */
+@media (max-width: 400px) {
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .hero-cta .btn-primary,
+    .hero-cta .btn-secondary {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .trust-item {
+        flex: 1 1 100%;
+    }
+
+    .brand-text {
+        font-size: 1rem;
+    }
+
+    .text-display-lg {
+        font-size: 1.75rem;
+    }
+
+    .text-headline-md {
+        font-size: 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-input {
+        border-right: 1px solid var(--color-outline-variant);
+        border-radius: var(--radius-sm);
+    }
+
+    .newsletter-submit-btn {
+        border-radius: var(--radius-sm);
+        padding: 10px;
     }
 }
 
@@ -1206,11 +1513,17 @@ footer {
 .page-banner {
     background-color: var(--color-primary); /* Slate Navy */
     background-image: radial-gradient(circle at 80% 20%, rgba(0, 106, 97, 0.12) 0%, transparent 50%), linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, var(--color-primary) 100%);
-    padding: 64px 0;
+    padding: 40px 0;
     text-align: center;
     border-bottom: 1px solid var(--color-outline-variant);
     position: relative;
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .page-banner {
+        padding: 64px 0;
+    }
 }
 
 .page-banner-title {
