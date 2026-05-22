@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prime Air Lab Solutions - Premium Industrial Cleanrooms, Modular Operating Theaters, Lab Furniture, and Scientific Doors. Engineered for sterile precision, safety, and regulatory compliance.">
+    <title>Prime Air Lab Solutions | Controlled Environment Engineering</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon containing clinical shield icon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006a61'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/></svg>">
+</head>
+<body>
+
+    <!-- 1. HEADER NAVIGATION (Top Horizontal Menu) -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <span class="material-symbols-outlined brand-icon">precision_manufacturing</span>
+                <span class="brand-text">PRIME AIR LAB</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="process.html" class="nav-link">Process</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="contact.html" class="btn-primary desktop-nav">GET QUOTE</a>
+                <button class="mobile-toggle" aria-label="Open Sidebar Menu" id="menu-toggle-btn">
+                    <span class="material-symbols-outlined" style="font-size: 32px; color: var(--color-primary);">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Sidebar Menu Navigation -->
+    <div class="mobile-menu-overlay" id="menu-overlay"></div>
+    <aside class="mobile-menu" id="mobile-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span class="text-label-sm" style="color: var(--color-secondary);">Navigation</span>
+            <button class="nav-btn-icon" id="close-menu-btn" style="background: none; border: none; cursor: pointer;">
+                <span class="material-symbols-outlined" style="color: var(--color-primary);">close</span>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link active">Home</a>
+            <a href="about.html" class="mobile-menu-link">About</a>
+            <a href="services.html" class="mobile-menu-link">Services</a>
+            <a href="projects.html" class="mobile-menu-link">Projects</a>
+            <a href="process.html" class="mobile-menu-link">Process</a>
+            <a href="contact.html" class="mobile-menu-link">Contact</a>
+        </div>
+    </aside>
+
+    <main>
+        
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="hero" style="margin-top: 0;">
+            <div class="hero-bg-wrapper">
+                <img alt="Sterile pharmaceutical cleanroom laboratory facility" class="hero-img" src="hero_cleanroom.png">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 10;">
+                <div class="hero-content">
+                    <span class="hero-tag text-label-sm">ISO Certified B2B Solutions</span>
+                    
+                    <h1 class="text-display-lg" style="margin-bottom: 24px;">
+                        Complete Cleanroom &<br>Laboratory Infrastructure<br>Solutions
+                    </h1>
+                    
+                    <p class="text-body-lg" style="margin-bottom: 40px; max-width: 580px;">
+                        Prime Air Lab Solutions specializes in clean rooms, modular operation theatres, laboratory infrastructure, scientific doors, fire-rated systems, and pharmaceutical clean air solutions designed for safety, precision, and compliance.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="services.html" class="btn-primary">
+                            Explore Services
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a href="contact.html" class="btn-secondary">
+                            Request Quote
+                        </a>
+                    </div>
+                    
+                    <!-- Trust badges grid from screenshot specifications -->
+                    <div class="hero-trust-row">
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined trust-icon">verified</span>
+                            <span class="text-label-sm">✓ Premium SS304 Quality</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined trust-icon">health_and_safety</span>
+                            <span class="text-label-sm">✓ Pharma Grade Standards</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined trust-icon">engineering</span>
+                            <span class="text-label-sm">✓ Expert Installation</span>
+                        </div>
+                        <div class="trust-item">
+                            <span class="material-symbols-outlined trust-icon">architecture</span>
+                            <span class="text-label-sm">✓ Customized Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Highlights / Core Statistics Section -->
+        <section class="section-padding" style="background-color: var(--color-surface-lowest); border-bottom: 1px solid var(--color-outline-variant);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr; md-grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;">
+                    <div>
+                        <span class="text-label-sm" style="color: var(--color-secondary); margin-bottom: 12px; display: inline-block;">engineering credentials</span>
+                        <h2 class="text-headline-md" style="margin-bottom: 20px;">Precision Controlled Environments</h2>
+                        <p class="text-body-md" style="margin-bottom: 16px;">
+                            Prime Air Lab Solutions operates on rigorous quality management, cleanroom validation cycles, and premium stainless steel fabrication. We design custom B2B projects to safeguard product safety and biological sterility.
+                        </p>
+                        <p class="text-body-md">
+                            Our managing partners **Mannam Karna** and **Estarla Suresh** bring years of cleanroom design experience, deploying sterile containment zones and medical facilities across the sector.
+                        </p>
+                    </div>
+                    <div class="about-partners-pane stainless-border" style="background-color: var(--color-surface-low); padding: 32px; border-radius: var(--radius-md);">
+                        <h3 class="text-title-lg" style="margin-bottom: 24px; text-transform: uppercase; color: var(--color-primary); border-bottom: 1px solid var(--color-outline-variant); padding-bottom: 12px; font-size: 1rem;">Core Compliance Metrics</h3>
+                        
+                        <div class="about-stat-row" style="grid-template-columns: 1fr; gap: 20px; border-top: none; padding-top: 0; margin-top: 0;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div class="stat-number" style="font-size: 2rem;">100%</div>
+                                <div>
+                                    <h4 class="text-label-md" style="color: var(--color-primary);">GMP & FDA Compliant</h4>
+                                    <p class="text-body-sm" style="font-size: 0.8rem;">Systems designed strictly to meet surgical and laboratory codes.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div class="stat-number" style="font-size: 2rem;">SS304</div>
+                                <div>
+                                    <h4 class="text-label-md" style="color: var(--color-primary);">Surgical Grade Alloys</h4>
+                                    <p class="text-body-sm" style="font-size: 0.8rem;">Heavy-gauge chemical resistant stainless steel constructions.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div class="stat-number" style="font-size: 2rem;">ISO</div>
+                                <div>
+                                    <h4 class="text-label-md" style="color: var(--color-primary);">Air Validation Certified</h4>
+                                    <p class="text-body-sm" style="font-size: 0.8rem;">Differential pressure loops paged to ISO 14644 levels.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FEATURED SERVICES SECTION (Preview) -->
+        <section class="section-padding tonal-layer">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 64px;">
+                    <span class="text-label-sm" style="color: var(--color-secondary);">sterile solutions</span>
+                    <h2 class="text-headline-md" style="margin: 0 auto;">Featured B2B Services</h2>
+                    <p class="text-body-md" style="max-width: 600px; margin: 12px auto 0;">
+                        Preview of our premium sterile engineering offerings. View our complete catalog for the full industrial range.
+                    </p>
+                </div>
+                
+                <div class="services-grid" style="margin-bottom: 56px;">
+                    <!-- Featured Service 1: Clean Rooms -->
+                    <div class="service-card stainless-border">
+                        <div class="service-img-wrapper">
+                            <img alt="Clean Rooms panel installations" class="service-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD4XaFe2vCG4mdM_BwKbH7k3WPWK_7Tx3_E6oUOREqhlpK7MU32JsXDNVX66TyTxDVSa7dHBYGIxqKGxmo1ucogRC_mUlwVehvAK7sjd1ExfHIGx9Baiy6EL1Dbsl0ACxeqwIh-JeU-fPd9ACTVz4ey1DgwH2s54cZxln-ZLKv6L2wCFgsBo3IRvHt4t9KbaIuoJ7JcmhLRbF9Z9TiWR57SPdp7CSwNPRS6c_fQB5Mbdlu6uCcaCO6HU2vd96s0NRPcTjbT_Y75Gov">
+                        </div>
+                        <div class="service-body">
+                            <h3 class="text-title-lg">Turnkey Clean Rooms</h3>
+                            <p class="text-body-sm">Customized cleanroom solutions for pharmaceutical, healthcare, and industrial environments.</p>
+                            <div class="service-actions">
+                                <button class="btn-card-details" onclick="openProductModal('cleanroom')">DETAILS</button>
+                                <button class="btn-card-quote" onclick="requestServiceQuote('cleanroom')">GET QUOTE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Service 2: Modular OTs -->
+                    <div class="service-card stainless-border">
+                        <div class="service-img-wrapper">
+                            <img alt="Modular hospital operating theater panels" class="service-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB3Nxhn9zyytJAHm_0XRy49gefF00_uWCny0noplF4cJ-OEssnp8cbVX0XHTVZAxGQWJUxbwCZlA-poNU428r7WU96wDFmQqKY03lyGItgspp3kr8NOoC2mAmy3l7NQeQVd0vyDcja4_-RO0zvxtKqYnaqTCvOUUSakbmRXNl7ojdDkR9FdoBmmcz7Cil7uoJkDhR-5tedrWDpryHjAzrSxkHc44gNHqU7-6PQ9ExRq9Nx0nk2Ohy-E0Cei0Tm11-gihkwBhdQOYGk">
+                        </div>
+                        <div class="service-body">
+                            <h3 class="text-title-lg">Modular Operation Theatres</h3>
+                            <p class="text-body-sm">Advanced sterile OT solutions designed for hospitals and healthcare institutions.</p>
+                            <div class="service-actions">
+                                <button class="btn-card-details" onclick="openProductModal('modular-ot')">DETAILS</button>
+                                <button class="btn-card-quote" onclick="requestServiceQuote('modular-ot')">GET QUOTE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Service 3: SS304 Pass Box -->
+                    <div class="service-card stainless-border">
+                        <div class="service-img-wrapper">
+                            <img alt="AISI 304 Stainless steel dynamic pass box compartment" class="service-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYp65DZiehv1ZX4aIHjOgWXR695q156PDk-IZ7st6kwVVsVt1Bp8rOFEm245aQLtgPlph8iSt1wYLGNcF_6MRPpioLzZsuEISWF887YxkUu6hihsJIIRmy1jNMpnK9lLQtp4mioj8-PSOT-70nsFojsWaBMz-T-oKD4Gg7U9AL6cxuteR0rfEz7pINaB3GWvC_lwp0WFBgPhoQbI0OezyXGbO0kyT7x6keGPSaT7AxwYLxRxltAiwKEm2Y6-XE9j0i3WMye3S3vPeU">
+                        </div>
+                        <div class="service-body">
+                            <h3 class="text-title-lg">SS304 Pass Box</h3>
+                            <p class="text-body-sm">High-quality stainless steel pass boxes for contamination-free material transfer.</p>
+                            <div class="service-actions">
+                                <button class="btn-card-details" onclick="openProductModal('pass-box')">DETAILS</button>
+                                <button class="btn-card-quote" onclick="requestServiceQuote('pass-box')">GET QUOTE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="services.html" class="btn-primary" style="height: 52px; padding: 0 36px;">
+                        VIEW ALL SOLUTIONS (11 PRODUCTS)
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA PANEL SECTION -->
+        <section class="section-padding" style="background-color: var(--color-surface-lowest); border-top: 1px solid var(--color-outline-variant);">
+            <div class="container">
+                <div class="stainless-border" style="background: var(--color-primary); background-image: radial-gradient(circle at 90% 10%, rgba(0, 106, 97, 0.2) 0%, transparent 60%); padding: 56px 40px; border-radius: var(--radius-md); text-align: center; color: #ffffff;">
+                    <span class="text-label-sm" style="color: var(--color-secondary-container); margin-bottom: 12px; display: inline-block;">Ready to configure?</span>
+                    <h2 class="text-headline-md" style="color: #ffffff; margin-bottom: 20px;">Request A Customized B2B Quote</h2>
+                    <p class="text-body-lg" style="color: var(--color-on-primary-container); max-width: 600px; margin: 0 auto 32px; font-size: 1.05rem;">
+                        Our senior clinical estimators will formulate comprehensive geometric cleanroom plans, air filter configurations, and cost calculations for your approval.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                        <a href="contact.html" class="btn-primary" style="background-color: var(--color-secondary); color: #ffffff; height: 50px;">
+                            REQUEST PROPOSAL
+                        </a>
+                        <a href="tel:9000116672" class="btn-secondary" style="border-color: #ffffff; color: #ffffff; height: 50px;">
+                            CALL HELPLINE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 8. FOOTER -->
+    <footer>
+        <div class="container footer-top">
+            <div class="footer-column" style="grid-column: span 1.5;">
+                <div class="brand" style="align-self: flex-start;">
+                    <span class="material-symbols-outlined brand-icon" style="color: var(--color-secondary);">precision_manufacturing</span>
+                    <span class="brand-text">PRIME AIR LAB</span>
+                </div>
+                <p class="text-body-sm" style="margin-top: 12px; line-height: 1.6;">
+                    Engineered for Sterile Precision. A trusted infrastructure manufacturer specializing in clean rooms, hospital modular operating theaters, and heavy-grade SS304 clinical fittings.
+                </p>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="text-label-sm" style="color: var(--color-primary); font-weight: 800; border-bottom: 2px solid var(--color-secondary); padding-bottom: 4px; display: inline-block;">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="text-label-sm" style="color: var(--color-primary); font-weight: 800; border-bottom: 2px solid var(--color-secondary); padding-bottom: 4px; display: inline-block;">Support Contacts</h4>
+                <ul>
+                    <li style="color: var(--color-on-surface-variant); font-size: 0.875rem;">Phone: <strong>+91 9000116672</strong></li>
+                    <li style="color: var(--color-on-surface-variant); font-size: 0.875rem;">Email: <strong>primeairlabsolutions@gmail.com</strong></li>
+                    <li style="color: var(--color-on-surface-variant); font-size: 0.875rem;">Location: <strong>Telangana, India</strong></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column" style="grid-column: span 1.2;">
+                <h4 class="text-label-sm" style="color: var(--color-primary); font-weight: 800; border-bottom: 2px solid var(--color-secondary); padding-bottom: 4px; display: inline-block;">Newsletter</h4>
+                <p class="text-body-sm" style="margin-bottom: 12px; margin-top: 8px;">Receive corporate cleanroom compliance whitepapers.</p>
+                <form class="newsletter-form" id="newsletter-form" action="#" method="GET">
+                    <input class="newsletter-input" placeholder="Email Address" type="email" required>
+                    <button class="newsletter-submit-btn" aria-label="Send email">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">send</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container" style="display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 16px;">
+                <p class="text-label-sm" style="color: var(--color-on-surface-variant); font-size: 0.72rem;">
+                    © 2026 Prime Air Lab Solutions. All rights reserved. Made in India. ISO 9001:2015, GMP, & FDA compliance active.
+                </p>
+                <div style="display: flex; gap: 16px; align-items: center;">
+                    <span class="text-label-sm" style="font-size: 0.7rem; color: var(--color-secondary);">ISO certified flow</span>
+                    <span class="text-label-sm" style="font-size: 0.7rem; color: var(--color-secondary);">SS304 Quality</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 11. Modal Dialog for Technical Specifications Popups -->
+    <div class="modal-overlay" id="product-spec-modal">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="close-modal-trigger" aria-label="Close dialog">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <h3 class="text-headline-sm modal-title" id="modal-product-title">Technical Specifications</h3>
+            
+            <div class="modal-body">
+                <p class="text-body-md" id="modal-product-description">Detailed engineering specification sheet for cleanroom structures.</p>
+                
+                <ul class="spec-list" id="modal-spec-list">
+                    <!-- Dynamically populated spec items -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12. Floating Premium WhatsApp Support Widget -->
+    <a href="https://wa.me/919000116672?text=Hello%20Prime%20Air%20Lab%20Solutions,%20I%20would%20like%20to%20request%20a%20quote%20for%20your%20cleanroom%20and%20laboratory%20infrastructure%20solutions." target="_blank" class="floating-whatsapp-widget" aria-label="Chat with Prime Air Lab Solutions on WhatsApp">
+        <span class="widget-pulse"></span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: block;">
+            <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.459 3.474 1.332 4.988L2 22l5.176-1.357c1.47.8 3.111 1.22 4.825 1.22 5.506 0 9.988-4.482 9.988-9.988C22 6.482 17.518 2 12.012 2zm.006 18.005c-1.503 0-2.98-.403-4.269-1.168l-.305-.181-3.175.833.847-3.097-.199-.317a7.935 7.935 0 0 1-1.222-4.103c0-4.394 3.578-7.973 7.973-7.973 4.394 0 7.973 3.578 7.973 7.973.001 4.395-3.577 7.972-7.973 7.972zm4.368-5.967c-.239-.12-1.414-.697-1.633-.777-.219-.08-.378-.12-.538.12-.16.239-.618.777-.757.936-.14.16-.279.18-.518.06-.239-.12-1.011-.373-1.926-1.189-.711-.634-1.192-1.418-1.331-1.658-.14-.239-.015-.369.105-.488.108-.107.239-.279.359-.418.12-.14.16-.239.239-.398.08-.16.04-.299-.02-.418-.06-.12-.538-1.295-.737-1.773-.194-.466-.393-.403-.538-.41-.14-.007-.299-.007-.459-.007s-.418.06-.638.299c-.219.239-.837.817-.837 1.992s.857 2.311.977 2.47c.12.16 1.686 2.574 4.084 3.607.571.246 1.017.393 1.363.502.573.181 1.095.156 1.507.094.46-.069 1.414-.578 1.614-1.136.2-.558.2-1.036.14-1.136-.06-.1-.219-.16-.459-.28z"/>
+        </svg>
+    </a>
+
+    <!-- Application Script Link -->
+    <script src="script.js"></script>
+</body>
+</html>
