@@ -1552,6 +1552,30 @@ footer {
     overflow: hidden;
 }
 
+.page-banner.about-banner {
+    background-image: linear-gradient(180deg, rgba(6, 64, 34, 0.85) 0%, rgba(6, 60, 32, 0.9) 100%), url('about_banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.page-banner.projects-banner {
+    background-image: linear-gradient(180deg, rgba(6, 64, 34, 0.85) 0%, rgba(6, 60, 32, 0.9) 100%), url('projects_banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.page-banner.process-banner {
+    background-image: linear-gradient(180deg, rgba(6, 64, 34, 0.85) 0%, rgba(6, 60, 32, 0.9) 100%), url('process_banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.page-banner.contact-banner {
+    background-image: linear-gradient(180deg, rgba(6, 64, 34, 0.85) 0%, rgba(6, 60, 32, 0.9) 100%), url('contact_banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
 @media (min-width: 768px) {
     .page-banner {
         padding: 64px 0;
