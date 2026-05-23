@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    PRIME AIR LAB SOLUTIONS - PREMIUM CORPORATE B2B DESIGN SYSTEM
    Theme: "Clinical B2B Corporate Light Mode" with Teal Accents
    ========================================================================== */
@@ -9,14 +9,14 @@
 
 /* --- Design Tokens / CSS Variables --- */
 :root {
-    /* Color Brand Palette - Warm White & Off-White */
-    --color-bg: #fafbfc;
+    /* Color Brand Palette - Premium White & Off-White */
+    --color-bg: #ffffff;
     --color-surface-lowest: #ffffff;
-    --color-surface-low: #f4f7f5; /* Soft warm green-tinted off-white */
-    --color-surface: #fafbfc;
-    --color-surface-high: #e2ece8; /* Soft green-grey borders */
-    --color-surface-highest: #bdcbc3;
-    --color-surface-container: #e2ece8;
+    --color-surface-low: #fcfdfc; /* Premium off-white */
+    --color-surface: #ffffff;
+    --color-surface-high: #f0f4f2; /* Soft premium border */
+    --color-surface-highest: #e8edea;
+    --color-surface-container: #f0f4f2;
     
     /* Corporate Brand Primary Colors - Dark Forest Green */
     --color-primary: #064022; 
@@ -27,7 +27,7 @@
     /* Secondary Colors - Leaf Green */
     --color-secondary: #0a5c36;
     --color-on-secondary: #ffffff;
-    --color-secondary-container: #ffe5d9; /* Very soft orange container for tags */
+    --color-secondary-container: #fff4ed; /* Very soft orange container for tags */
     --color-on-secondary-container: #ff6a00; /* Logo Orange Accent */
     
     /* Accent Highlights - Orange Accent */
@@ -35,10 +35,10 @@
     --color-on-accent: #ffffff;
     
     /* Visual Borders & Shading */
-    --color-outline: #5c6e64; /* Soft organic outline color */
-    --color-outline-variant: #e6ede9; /* Subtle hairline separator */
-    --color-on-surface: #17241c; /* Dark organic forest-black for high legibility */
-    --color-on-surface-variant: #485950; /* Organic grey-green */
+    --color-outline: #d6e0db; /* Soft premium outline */
+    --color-outline-variant: #eef2f0; /* Subtle hairline separator */
+    --color-on-surface: #064022; /* Primary premium green for high legibility */
+    --color-on-surface-variant: #112d1e; /* Darker green */
     --color-error: #ba1a1a;
     
     /* Typography Fonts */
@@ -725,21 +725,25 @@ main {
 }
 
 .btn-card-details {
-    background: transparent;
-    color: var(--color-outline);
-    border: 1px solid var(--color-surface-highest);
+    background: #ff6a00;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-sm);
     padding: 10px 0;
     font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.75rem;
     letter-spacing: 0.05em;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 106, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .btn-card-details:hover {
-    background-color: var(--color-surface-low);
-    color: var(--color-primary);
+    background-color: #e65f00;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(255, 106, 0, 0.3);
 }
 
 .btn-card-quote {
@@ -834,13 +838,17 @@ main {
 .project-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(6, 64, 34, 0.95) 20%, rgba(6, 64, 34, 0.15) 100%);
+    background: linear-gradient(0deg, rgba(6, 64, 34, 0.6) 0%, rgba(6, 64, 34, 0) 60%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 24px;
-    opacity: 0.95;
+    opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+.project-card-wrap:hover .project-overlay {
+    opacity: 1;
 }
 
 /* --- Feasibility Inquiry Form --- */
@@ -1447,7 +1455,7 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #25d366; /* Official WhatsApp Green */
+    background-color: transparent; /* Official WhatsApp Green */
     color: #ffffff;
     padding: 12px 24px;
     border: none;
@@ -1464,7 +1472,7 @@ footer {
 }
 
 .btn-whatsapp-cta:hover {
-    background-color: #1ebd56;
+    background-color: transparent;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
@@ -1481,35 +1489,25 @@ footer {
     right: 24px;
     width: 60px;
     height: 60px;
-    background-color: #25d366;
+    background-color: transparent;
     color: #ffffff;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+    box-shadow: none;
     z-index: 2999;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .floating-whatsapp-widget:hover {
-    transform: scale(1.1) rotate(8deg);
-    background-color: #1ebd56;
-    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+    transform: translateY(-4px);
+    background-color: transparent;
+    box-shadow: none;
 }
 
-/* Widget pulsing core ring effect */
-.widget-pulse {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #25d366;
-    border-radius: var(--radius-full);
-    z-index: -1;
-    opacity: 0.4;
-    animation: waPulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
+/* Removed widget pulse per user request */
 
 @keyframes waPulse {
     0% {
@@ -1517,7 +1515,7 @@ footer {
         opacity: 0.4;
     }
     50% {
-        transform: scale(1.4);
+        transform: scale(1.2);
         opacity: 0;
     }
     100% {
@@ -1581,5 +1579,8 @@ footer {
     color: #ffffff;
     font-weight: 600;
 }
+
+
+
 
 
