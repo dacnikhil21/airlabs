@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    PRIME AIR LAB SOLUTIONS - PREMIUM CORPORATE B2B DESIGN SYSTEM
    Theme: "Clinical B2B Corporate Light Mode" with Teal Accents
    ========================================================================== */
@@ -264,7 +264,7 @@ h1, h2, h3, h4 {
 /* --- Top Header Navigation --- */
 header {
     width: 100%;
-    height: 80px;
+    height: auto; min-height: 90px; padding: 12px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -298,7 +298,7 @@ header.scrolled {
 }
 
 .brand-logo-img {
-    height: 48px; /* Clean, perfectly sized in 80px high header */
+    max-height: 64px; width: auto; object-fit: contain;
     width: auto;
     display: block;
     transition: transform 0.2s ease;
@@ -1390,11 +1390,24 @@ footer {
 
     /* WhatsApp widget smaller on mobile */
     .floating-whatsapp-widget {
-        width: 52px;
-        height: 52px;
-        bottom: 16px;
-        right: 16px;
-    }
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    color: #25d366; /* Official WhatsApp Green for the SVG icon itself */
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    z-index: 2999;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: gentleFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(37, 211, 102, 0.3));
+}
 }
 
 /* ==========================================================================
@@ -1490,7 +1503,7 @@ footer {
     width: 60px;
     height: 60px;
     background-color: transparent;
-    color: #ffffff;
+    color: #25d366; /* Official WhatsApp Green for the SVG icon itself */
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -1498,30 +1511,25 @@ footer {
     box-shadow: none;
     z-index: 2999;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: gentleFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 6px rgba(37, 211, 102, 0.3));
 }
 
 .floating-whatsapp-widget:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) scale(1.05);
     background-color: transparent;
     box-shadow: none;
+    animation-play-state: paused;
+    filter: drop-shadow(0 8px 12px rgba(37, 211, 102, 0.4));
 }
 
 /* Removed widget pulse per user request */
 
-@keyframes waPulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.4;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
+@keyframes gentleFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
 }
 
 /* ==========================================================================
@@ -1579,6 +1587,8 @@ footer {
     color: #ffffff;
     font-weight: 600;
 }
+
+
 
 
 

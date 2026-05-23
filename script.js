@@ -148,6 +148,39 @@ const PRODUCT_SPECS = {
             ['Customization', 'Tailored ergonomic designs for critical care units'],
             ['Durability', 'Heavy-gauge steel with anti-corrosive chemical resistance']
         ]
+    },
+    'sliding-gates': {
+        title: 'Industrial Motorized Sliding Gates',
+        description: 'Heavy-duty motorized sliding gates built for secure, frequent, and smooth access control at high-traffic industrial facility entry points.',
+        specs: [
+            ['Drive Mechanism', 'Heavy-duty oil-bath gear motor with manual release override'],
+            ['Material Grade', 'High-strength structural steel or hot-dip galvanized frame'],
+            ['Operating Speed', '10 - 15 meters per minute with soft start/stop function'],
+            ['Safety Sensors', 'Dual infrared photocells and safety rubber edge sensor'],
+            ['Control Interface', 'Remote control, push-button, RFID reader, or loop detector']
+        ]
+    },
+    'telescopic-gates': {
+        title: 'Telescopic Access Gates',
+        description: 'Space-saving multi-panel telescopic gates engineered for wide entrances where backspace is limited, utilizing a synchronized cable/chain system.',
+        specs: [
+            ['Panel Configuration', '2-panel or 3-panel synchronized telescopic system'],
+            ['Material Construction', 'Heavy-gauge galvanized steel or industrial SS304 alloy'],
+            ['Drive Type', 'High-torque automated gear drive with guide tracks'],
+            ['Safety Control', 'Obstacle-detection sensors and emergency stop buttons'],
+            ['Clear Opening Width', 'Up to 15 meters with minimized parking space requirements']
+        ]
+    },
+    'high-speed-shutters': {
+        title: 'High-Speed Roller Shutters',
+        description: 'Rapid-acting roll-up doors designed for intensive use, environmental separation, dust mitigation, and temperature control in warehouse and cleanroom zones.',
+        specs: [
+            ['Opening Speed', '1.2 to 2.0 meters per second adjustable speed'],
+            ['Curtain Material', 'High-density tear-resistant PVC with transparent vision strip'],
+            ['Wind Resistance', 'Reinforced wind-lock profiles (Class 2 / Class 3 rating)'],
+            ['Safety Edge', 'Wireless safety edge sensor and optical safety light grid'],
+            ['Drive Motor', 'Frequency-controlled smart industrial drive with manual crank']
+        ]
     }
 };
 
