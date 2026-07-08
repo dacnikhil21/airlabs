@@ -1,0 +1,11 @@
+﻿# robots.txt for Prime Air Lab Solutions
+# https://airlabs.vercel.app
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (none currently)
+# Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://airlabs.vercel.app/sitemap.xml
