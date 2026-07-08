@@ -641,4 +641,142 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ==========================================================================
+       PREMIUM UI/UX INTERACTION ENHANCEMENTS
+       ========================================================================== */
+
+    // 1. Sticky Header Scroll Toggle with Shadow
+    const headerEl = document.getElementById('header');
+    if (headerEl) {
+        const toggleHeaderShadow = () => {
+            if (window.scrollY > 40) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', toggleHeaderShadow);
+        toggleHeaderShadow(); // Check on load
+    }
+
+    // 2. Metrics & Statistics Count-Up Engine
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers.length > 0) {
+        const countUpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const originalText = el.textContent.trim();
+                    
+                    // Parse text: extract the first contiguous sequence of digits
+                    const digitMatch = originalText.match(/(\d+)/);
+                    if (digitMatch) {
+                        const targetValue = parseInt(digitMatch[1], 10);
+                        const numberIndex = originalText.indexOf(digitMatch[1]);
+                        const prefix = originalText.substring(0, numberIndex);
+                        const suffix = originalText.substring(numberIndex + digitMatch[1].length);
+                        
+                        let startTimestamp = null;
+                        const duration = 1800; // 1.8 seconds for smooth premium feel
+                        
+                        const step = (timestamp) => {
+                            if (!startTimestamp) startTimestamp = timestamp;
+                            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                            
+                            // Cubic ease-out
+                            const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                            const currentValue = Math.floor(easeOutProgress * targetValue);
+                            
+                            el.textContent = `${prefix}${currentValue}${suffix}`;
+                            
+                            if (progress < 1) {
+                                window.requestAnimationFrame(step);
+                            } else {
+                                el.textContent = originalText; // Ensure exact final text
+                            }
+                        };
+                        window.requestAnimationFrame(step);
+                        countUpObserver.unobserve(el);
+                    }
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        statNumbers.forEach(stat => countUpObserver.observe(stat));
+    }
+
+    // 3. Lazy Image Transitions
+    const siteImages = document.querySelectorAll('img:not(.brand-logo-img):not(.hero-img)');
+    siteImages.forEach(img => {
+        img.classList.add('lazy-img');
+        
+        const setLoaded = () => {
+            setTimeout(() => img.classList.add('loaded'), 50);
+        };
+        
+        if (img.complete) {
+            setLoaded();
+        } else {
+            img.addEventListener('load', setLoaded);
+        }
+    });
+
+    // 4. Custom Scroll Reveal Engine using IntersectionObserver
+    const revealTargets = [
+        'section',
+        '.service-card',
+        '.process-step',
+        '.partner-card',
+        '.about-partners-pane',
+        '.value-card',
+        '.faq-item',
+        '.project-card'
+    ];
+    
+    const elementsToReveal = [];
+    revealTargets.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            if (el.id === 'hero' || el.closest('#hero') || el.classList.contains('preloader') || el.id === 'header') {
+                return;
+            }
+            elementsToReveal.push(el);
+        });
+    });
+
+    const staggerContainers = document.querySelectorAll('.services-grid, .process-timeline, .partners-list, .about-stat-row, .projects-grid');
+
+    if (elementsToReveal.length > 0) {
+        elementsToReveal.forEach(el => {
+            if (!el.classList.contains('reveal-element')) {
+                el.classList.add('reveal-element');
+                
+                if (el.classList.contains('service-card') || el.classList.contains('process-step') || el.classList.contains('partner-card')) {
+                    el.classList.add('reveal-fade-up');
+                } else if (el.classList.contains('about-partners-pane') || el.tagName.toLowerCase() === 'section') {
+                    el.classList.add('reveal-fade-in');
+                } else {
+                    el.classList.add('reveal-fade-up');
+                }
+            }
+        });
+
+        staggerContainers.forEach(container => {
+            const children = container.querySelectorAll('.reveal-element');
+            children.forEach((child, index) => {
+                child.style.transitionDelay = `${(index % 4) * 0.12}s`;
+            });
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+        elementsToReveal.forEach(el => revealObserver.observe(el));
+    }
+
 });

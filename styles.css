@@ -330,7 +330,7 @@ header.scrolled {
     color: var(--color-primary);
 }
 
-.nav-link.active::after {
+.nav-link::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -339,6 +339,15 @@ header.scrolled {
     height: 3px;
     background-color: var(--color-accent);
     border-radius: var(--radius-full);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .nav-actions {
@@ -1617,6 +1626,156 @@ footer {
 .breadcrumb span.current {
     color: #ffffff;
     font-weight: 600;
+}
+
+/* ==========================================================================
+   PREMIUM UI/UX ENHANCEMENTS
+   ========================================================================== */
+
+/* 1. Global Smooth Scroll Padding */
+html {
+    scroll-padding-top: var(--header-height, 96px);
+}
+
+/* 2. Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-surface-lowest);
+    border-left: 1px solid var(--color-outline-variant);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-outline);
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-surface-lowest);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+/* 3. Sticky Navbar Scrolled Style */
+header#header.scrolled {
+    box-shadow: 0 10px 30px rgba(6, 64, 34, 0.06), 0 1px 2px rgba(6, 64, 34, 0.02);
+    border-bottom: 1px solid var(--color-outline-variant);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* 4. Enhanced Button Hover Lift and Transitions */
+.btn-primary, .btn-secondary, .btn-card-details, .btn-card-quote {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 24px rgba(6, 64, 34, 0.28) !important;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(6, 64, 34, 0.15) !important;
+}
+
+.btn-card-details:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(255, 106, 0, 0.4) !important;
+}
+
+.btn-card-quote:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 20px rgba(6, 64, 34, 0.25) !important;
+}
+
+/* 5. Gentle Ken Burns Zoom Effect */
+@keyframes kenBurns {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.hero-img {
+    animation: kenBurns 24s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* 6. Sequential Hero Content Entrance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content > * {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-content .hero-tag {
+    animation-delay: 0.1s;
+}
+
+.hero-content h1 {
+    animation-delay: 0.3s;
+}
+
+.hero-content p {
+    animation-delay: 0.5s;
+}
+
+.hero-content .hero-cta {
+    animation-delay: 0.7s;
+}
+
+.hero-content .hero-trust-row {
+    animation-delay: 0.9s;
+}
+
+/* 7. Lazy Loading Image Soft Fade-In */
+.lazy-img {
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.lazy-img.loaded {
+    opacity: 1 !important;
+}
+
+/* 8. Scroll Reveal Animation Classes */
+.reveal-element {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-fade-up {
+    transform: translateY(32px);
+}
+
+.reveal-fade-in {
+    transform: none;
+}
+
+.reveal-zoom-in {
+    transform: scale(0.96);
+}
+
+.reveal-element.active {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 
